@@ -23,6 +23,7 @@ wss.on("connection", (ws, req) => {
     ws.send("Hello from the cloud!");
   });
   ws.on("close", () => {
+    console.log("Lost connection :(");
     delete connections[
       Object.keys(connections).find((key) => connections[key] === ws)
     ];
